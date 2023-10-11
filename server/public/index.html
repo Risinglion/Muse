@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheets/top-bar.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/newNote.js" defer></script>
+    <script>
+       
+    </script>
+    <title>Muse</title>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="title-options">
+            <div class="options" onclick="alterMenuVisibility()">
+                <img id="options-img" src="images/menuoptions_85724.svg" alt="options">
+            </div>
+            <div class="title">
+                Muse
+            </div>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search Notes">
+        </div>
+        <div class="profile-settings">
+          <img src="https://cdn.discordapp.com/avatars/756017054275862550/ce981b8b56909fe4a7a44ff2df3be745.png?size=2048" alt="profile">
+        </div>
+      </div>
+    <!-- content area -->
+    <div id="root">
+        <!-- vertical menu on the left -->
+        <div class="vertical-menu">
+            <div class="menu-item">
+                <img src="images/archive.svg" alt="home">
+                <div class="menu-item-text">
+                    Your Archives
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/bell.svg" alt="reminders">
+                <div class="menu-item-text">
+                    Reminders
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/bookmark_111017.svg" alt="bookmark">
+                <div class="menu-item-text">
+                    Bookmarks
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/gear.svg" alt="settings">
+                <div class="menu-item-text">
+                    Settings
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/play_button.svg" alt="logout">
+                <div class="menu-item-text">
+                    Saved Videos
+                </div>
+            </div>
+        </div>
+        <!-- notes area -->
+        <div id="notes-area">
+            <div class="new-note-area">
+                <!-- New note button -->
+                <div class="new-note">
+                    <div class="new-note-button" title="Create a new note" onclick="newNoteTextBox()">
+                      <img src="images/plus.svg" alt="new-note">
+                    </div>
+                  </div>
+                  <!-- text box to enter the note title and content -->
+                  <div class="new-note-text-box" style="display: none;">
+                    <input type="text" placeholder="Title">
+                    <textarea></textarea>
+                    <div class="close-text-box" onclick="closeNoteTextBox()">
+                      <img src="images/close.svg" alt="close-text-box" id="close-img" title="Close Note">
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

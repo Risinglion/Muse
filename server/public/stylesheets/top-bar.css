@@ -1,0 +1,129 @@
+/* minimalist font */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+/* style for the entire body */
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 10px;
+    box-sizing: content-box;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-bottom: 1px solid #cecbcb;
+}
+
+/* Style for the title */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style for the search bar */
+.search-bar {
+    margin: 0 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-bar input[type="text"] {
+    max-width: 500px;
+    max-height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    /* box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.1); */
+    background-color: #35383b;
+    color: rgba(108, 106, 106, 0.87) !important;
+}
+
+.search-bar input[type="text"]:focus {
+    outline: none;
+    background-color: aliceblue;
+    color: black !important;
+}
+
+/* Style for the profile settings */
+.profile-settings img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Style for the profile settings dropdown */
+.profile-settings-dropdown {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: #333333;
+    border: 1px solid white;
+    padding: 10px;
+    display: none;
+}
+
+.profile-settings-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-settings-dropdown ul li {
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.profile-settings-dropdown ul li:hover {
+    background-color: #666666;
+}
+
+.title-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .options {
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    border-radius: 6px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .options:hover {
+    background-color: #757e87;
+    color: white;
+  }
+/* onclick add border to options */
+    .options:active {
+        border: 1px solid #dbedff;
+    }
+  
+  #options-img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }

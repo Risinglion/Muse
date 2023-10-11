@@ -1,0 +1,150 @@
+#root{
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical-menu {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    height: 100%;
+    background-color: #1a1a1a;
+    padding-top: 20px;
+    margin-left: -10px;
+    /* border-right: 1px solid #cecbcb; */
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .menu-item-text {
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .new-note-area{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .new-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #051336;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  .new-note:hover {
+    background-color: #323a4d;
+  }
+
+  
+  .new-note-button img {
+    width: 50px;
+    height: 50px;
+    align-items: center;
+  }
+  .new-note-text-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    max-height: 700px;
+    background-color: #1a1a1a;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px 5px rgb(55, 60, 81);
+    padding: 2px;
+    border: 1px solid #cecbcb;
+    z-index: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .new-note-text-box input[type="text"], .new-note-text-box textarea {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    margin-bottom: -4px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+  /* style text area scroll bar color and border */
+ ::-webkit-scrollbar {
+     width: 12px;
+ }
+ 
+ ::-webkit-scrollbar-track{
+     border-radius: 10px;
+ }
+ 
+ ::-webkit-scrollbar-thumb{
+     border-radius: 10px;
+        background-color: #cecbcb; 
+ }
+ 
+  .new-note-text-box input[type="text"]::placeholder, .new-note-text-box textarea::placeholder {
+    color: lightgray;
+  }
+
+  .new-note-text-box input[type="text"]{
+    background-color: #1a1a1a;
+    font-weight: bold;
+    font-size:larger;
+  }
+
+  .new-note-text-box input[type="text"]:focus, .new-note-text-box textarea:focus {
+    outline: none;
+  }
+
+  .new-note-text-box textarea, .new-note-text-box input[type="text"]{
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .new-note-text-box textarea {
+    height: 200px;
+    resize: none;
+  }
+  
+  .new-note-text-box button {
+    background-color: #051336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .new-note-text-box button:hover {
+    background-color: #002b5c;
+  }
+
+  .close-text-box{
+    display: flex;
+    margin: 10px;
+    justify-content: flex-end;
+  }
+
+  #close-img{
+    width: 20px;
+    height: 20px;
+  }
