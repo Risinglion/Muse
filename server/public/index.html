@@ -7,9 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
     <script src="scripts/menu.js" defer></script>
     <script src="scripts/newNote.js" defer></script>
-    <script>
-       
-    </script>
+    <script src="scripts/save.js"></script>
     <title>Muse</title>
 </head>
 <body>
@@ -72,14 +70,29 @@
                     <div class="new-note-button" title="Create a new note" onclick="newNoteTextBox()">
                       <img src="images/plus.svg" alt="new-note">
                     </div>
-                  </div>
+                </div>
+            </div>
                   <!-- text box to enter the note title and content -->
                   <div class="new-note-text-box" style="display: none;">
-                    <input type="text" placeholder="Title">
-                    <textarea></textarea>
-                    <div class="close-text-box" onclick="closeNoteTextBox()">
-                      <img src="images/close.svg" alt="close-text-box" id="close-img" title="Close Note">
-                  </div>
+                    <textarea id="note-title" type="text" placeholder="Title"></textarea>
+                    <textarea id="note-desc"></textarea>
+                    <div class="new-note-buttons">
+                        <div class="new-note-save-button" onclick="saveNewNote()">
+                            Save
+                        </div>
+                        <div class="close-text-box" onclick="closeNoteTextBox()">
+                            <img src="images/close.svg" alt="close-text-box" id="close-img" title="Close Note">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- saved notes area -->
+            <div class="saved-notes">
+                <div class="notes-class">
+                    <div class="notes-title">Title</div>
+                    <div class="notes-content">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</div>
+                </div>
+                
             </div>
         </div>
     </div>

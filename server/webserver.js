@@ -45,6 +45,24 @@ app.get('/', (req, res) => {
     }
 });
 
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/login.html'))
+})
+
+app.post('/login', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    //check if username and password is valid
+    //if valid, create a session and redirect to index.html and send status code 200
+    //if not valid, redirect to login.html and send error status code 401
+})
+
+app.post('/api/savenotes', (req, res) => {
+    //reciever note from client
+    //save note to database
+    res.sendStatus(200)
+})
+
 app.listen(port, ()=>{
     console.log(`Hosting on ${port}`)
 })

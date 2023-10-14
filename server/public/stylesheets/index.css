@@ -33,10 +33,15 @@
     font-size: 16px;
     font-weight: bold;
   }
+
+  #notes-area{
+    display: flex;
+    flex-direction: column;
+  }
   
   .new-note-area{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .new-note {
@@ -76,7 +81,7 @@
     overflow-x: hidden;
   }
   
-  .new-note-text-box input[type="text"], .new-note-text-box textarea {
+  .new-note-text-box #note-title, .new-note-text-box #note-desc {
     width: 100%;
     border: none;
     font-size: 16px;
@@ -99,27 +104,31 @@
         background-color: #cecbcb; 
  }
  
-  .new-note-text-box input[type="text"]::placeholder, .new-note-text-box textarea::placeholder {
+  .new-note-text-box #note-title::placeholder, .new-note-text-box note-desc::placeholder {
     color: lightgray;
   }
 
-  .new-note-text-box input[type="text"]{
+  .new-note-text-box #note-title{
     background-color: #1a1a1a;
     font-weight: bold;
     font-size:larger;
   }
 
-  .new-note-text-box input[type="text"]:focus, .new-note-text-box textarea:focus {
+  .new-note-text-box #note-title:focus, .new-note-text-box #note-desc:focus {
     outline: none;
   }
 
-  .new-note-text-box textarea, .new-note-text-box input[type="text"]{
+  .new-note-text-box #note-desc, .new-note-text-box #note-title{
     background-color: #1a1a1a;
     color: white;
   }
   
-  .new-note-text-box textarea {
+  .new-note-text-box #note-desc {
     height: 200px;
+    resize: none;
+  }
+
+  .new-note-text-box #note-title{
     resize: none;
   }
   
@@ -138,6 +147,28 @@
     background-color: #002b5c;
   }
 
+  .new-note-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .new-note-save-button{
+    font-size: large;
+    border: 1px solid #cecbcb;
+    border-radius: 4px;
+    max-width: 100px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .new-note-save-button:hover{
+    background-color: #323a4d;
+  }
+
+
   .close-text-box{
     display: flex;
     margin: 10px;
@@ -147,4 +178,28 @@
   #close-img{
     width: 20px;
     height: 20px;
+  }
+
+  .saved-notes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    margin-top: 200px;
+    margin-left: 18px;
+  }
+
+  .notes-class {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #cecbcb;
+    border-radius: 10px;
+    margin: 12px;
+    padding: 10px;
+    min-width: 200px;
+    max-width: 250px;
+    height: fit-content;
+    max-height: 500px;
+    overflow: scroll;
+    width: 100%;
   }
