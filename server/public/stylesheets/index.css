@@ -92,7 +92,7 @@
   }
   /* style text area scroll bar color and border */
  ::-webkit-scrollbar {
-     width: 12px;
+     width: 7px;
  }
  
  ::-webkit-scrollbar-track{
@@ -101,7 +101,7 @@
  
  ::-webkit-scrollbar-thumb{
      border-radius: 10px;
-        background-color: #cecbcb; 
+      background-color: #4f5151; 
  }
  
   .new-note-text-box #note-title::placeholder, .new-note-text-box note-desc::placeholder {
@@ -181,12 +181,11 @@
   }
 
   .saved-notes{
+    /*spread items randomly despite of height*/
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     box-sizing: content-box;
-    margin-top: 200px;
-    margin-left: 18px;
+    margin: 200px auto;
   }
 
   .notes-class {
@@ -194,12 +193,13 @@
     flex-direction: column;
     border: 1px solid #cecbcb;
     border-radius: 10px;
-    margin: 12px;
+    margin: 3px;
     padding: 10px;
     min-width: 200px;
     max-width: 250px;
     height: fit-content;
     max-height: 500px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 100%;
   }
