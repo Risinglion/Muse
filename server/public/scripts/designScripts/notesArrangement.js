@@ -116,8 +116,8 @@ function alignNotes() {
     }
 }
 
-window.addEventListener('resize', alignNotes);
-window.addEventListener('load', alignAfterSave);
+// window.addEventListener('resize', alignNotes);
+// window.addEventListener('load', alignAfterSave);
 
 function alignAfterSave(){
     console.log('alignAfterSave() called.')
