@@ -32,5 +32,5 @@ function saveNewNote(){
     title.value = ""
     text.value = ""
     closeNoteTextBox()
-    alignAfterSave()
+    // alignAfterSave()
 }
