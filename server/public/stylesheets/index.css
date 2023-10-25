@@ -183,7 +183,9 @@
   .saved-notes{
     /*spread items randomly despite of height*/
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     box-sizing: content-box;
     margin: 200px auto;
   }

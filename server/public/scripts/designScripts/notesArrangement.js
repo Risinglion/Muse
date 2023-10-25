@@ -1,19 +1,19 @@
 function alignNotes() {
     const notes = document.querySelectorAll('.notes-class')
     console.log('Function alignNotes() called.')
+    const notesContainer = document.getElementsByClassName('saved-notes')[0].offsetWidth
     const minWidth = notes[0].offsetWidth
     const containerWidth = window.innerWidth - (document.getElementsByClassName('vertical-menu')[0].offsetWidth + document.getElementById('notes-area').offsetWidth)
     console.log('minWidth: ' + minWidth)
-    console.log('containerWidth: ' + containerWidth)
-    console.log('numNotesPerRow: ' + (containerWidth / minWidth))
-    const numNotesPerRow = Math.floor(containerWidth / minWidth)
-    const notesContainer = document.getElementsByClassName('saved-notes')[0]
+    console.log('containerWidth: ' + notesContainer)
+    console.log('numNotesPerRow: ' + (notesContainer / minWidth))
+    const numNotesPerRow = Math.ceil(notesContainer / minWidth)
     //2D array to store the heights of the notes in numNotesPerRow columns and rows until there are no more notes
     let numArr = []
     let numNotes = notes.length
     console.log(numNotes)
     console.log(numNotesPerRow)
-    let k = Math.ceil(numNotes/numNotesPerRow)
+    let k = Math.floor(numNotes/numNotesPerRow)
     console.log(k)
     let l = 0
     for(let i = 0; i < k; i++){
@@ -30,11 +30,11 @@ function alignNotes() {
     console.log(numArr)
     //store the heights of the notes in the sorted order along with their indices
     let map = []
-    let x = 0
+    var x = 0
     if(notes.length == numNotesPerRow * k){
         for(; x<notes.length; x++){
             map[x] = []
-            map[x][0] = i
+            map[x][0] = x
             map[x][1] = notes[x].offsetHeight
         }
     } else{
@@ -96,28 +96,28 @@ function alignNotes() {
         notesArr[colArrange[i]].push(i)
     }
     console.log(notesArr)
-    for(let i = 0; i < numNotesPerRow; i++){
-        var colCount = 0
-        let colHeightSoFar = 0
-        for(let j = 0; j < notesArr[i].length; j++){
-            let y = colHeights[i]
-            const index = notesArr[i][j]
-            if(index < notes.length && colCount > 0){
-                notes[index].style.transform = 'translateY(' + '-'+(colHeightSoFar - 3) + 'px)'
-                colHeightSoFar += notes[index].offsetHeight
-                colCount++
-                y-=(notes[index].offsetHeight + 3)
-            } else if(index < notes.length && colCount == 0){
-                colHeightSoFar += notes[index].offsetHeight
-                colCount++
-                y-=(notes[index].offsetHeight + 3)
-            }
-        }
-    }
+    // for(let i = 0; i < numNotesPerRow; i++){
+    //     var colCount = 0
+    //     let colHeightSoFar = 0
+    //     for(let j = 0; j < notesArr[i].length; j++){
+    //         let y = colHeights[i]
+    //         const index = notesArr[i][j]
+    //         if(index < notes.length && colCount > 0){
+    //             notes[index].style.transform = 'translateY(' + '-'+(colHeightSoFar - 3) + 'px)'
+    //             colHeightSoFar += notes[index].offsetHeight
+    //             colCount++
+    //             y-=(notes[index].offsetHeight + 3)
+    //         } else if(index < notes.length && colCount == 0){
+    //             colHeightSoFar += notes[index].offsetHeight
+    //             colCount++
+    //             y-=(notes[index].offsetHeight + 3)
+    //         }
+    //     }
+    // }
 }
 
-// window.addEventListener('resize', alignNotes);
-// window.addEventListener('load', alignAfterSave);
+window.addEventListener('resize', alignNotes);
+window.addEventListener('load', alignAfterSave);
 
 function alignAfterSave(){
     console.log('alignAfterSave() called.')
