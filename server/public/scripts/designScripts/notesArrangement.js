@@ -121,6 +121,7 @@ window.addEventListener('resize', alignNotes);
 window.addEventListener('load', alignAfterSave);
 
 function alignAfterSave(){
+    return 1 // TODO: Remove this line after testing
     console.log('alignAfterSave() called.')
     setTimeout(alignNotes, 100)
 }
