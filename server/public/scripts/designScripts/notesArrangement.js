@@ -1,4 +1,5 @@
 function alignNotes() {
+    return 1 // TODO: Remove this line after testing
     const notes = document.querySelectorAll('.notes-class')
     console.log('Function alignNotes() called.')
     const notesContainer = document.getElementsByClassName('saved-notes')[0].offsetWidth
