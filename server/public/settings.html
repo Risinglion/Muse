@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- By Sai Varun V -->
+<html>
+<head>
+    <title>Settings Page</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #cecbcb;
+            font-family: Arial, sans-serif;
+        }
+    
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #cecbcb;
+            border-radius: 5px;
+        }
+    
+        form input, form select {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #cecbcb;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: #cecbcb;
+        }
+    
+        form input[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #cecbcb;
+            color: #1a1a1a;
+            cursor: pointer;
+        }
+    
+        a {
+            color: #cecbcb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Settings</h2>
+    <form action="update_settings.php" method="post">
+        <h3>Theme Settings</h3>
+        <label for="theme">Select Theme:</label>
+        <select id="theme" name="theme">
+            <option value="dark">Dark Theme</option>
+            <option value="light">Light Theme</option>
+        </select><br><br>
+
+        <h3>History</h3>
+        <a href="view_history.php">View History</a><br><br>
+
+        <input type="submit" value="Save Settings">
+    </form>
+
+    <h3 style="position: fixed; bottom: 0; left: 5; cursor: pointer; color: red;" onclick="logOut()">Logout</h3>
+</body>
+    <script>
+        function logOut() {
+            //send logout request to server usinf fetch
+            fetch('api/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => {
+                if (response.status == 200) {
+                    console.log('Logged out successfully');
+                    window.location.href = '/login';
+                }
+                else {
+                    console.log('Error logging out');
+                }
+                response.json()
+            })
+        }
+    </script>
+</html>
