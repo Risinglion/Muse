@@ -94,7 +94,7 @@ app.post('/api/login', (req, res) => {
         sessionId = Math.random().toString(36).substring(2, 11)
         res.cookie('session-token', sessionId, {
             maxAge: 1000 * 60 * 60, // 1 hour
-            //secure: true, // Only send the cookie over HTTPS
+            secure: true, // Only send the cookie over HTTPS
             httpOnly: true, // Only allow the browser to access the cookie
         });
         res.status(200).json({message: 'OK', redirect: '/'});
