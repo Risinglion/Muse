@@ -10,15 +10,19 @@ body{
 }
 
 .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     background-color: #1a1a1a;
     padding: 10px;
     box-sizing: content-box;
-    margin-top: -10px;
+    /* margin-top: -10px;
     margin-left: -10px;
-    margin-right: -10px;
+    margin-right: -10px; */
     border-bottom: 1px solid #cecbcb;
 }
 
@@ -60,6 +64,31 @@ body{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+.profile-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-right: 25px;
+}
+
+.profile-settings a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    border: #1a1a1a;
+}
+
+.profile-settings a:hover {
+    color: #dbedff;
+    border: 1px solid #dbedff;
+    border-radius: 3px;
 }
 
 /* Style for the profile settings dropdown */

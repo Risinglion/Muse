@@ -1,6 +1,7 @@
 #root{
     display: flex;
     flex-direction: row;
+	margin-top: 75px;
 }
 
 .vertical-menu {
@@ -175,6 +176,11 @@
     justify-content: flex-end;
   }
 
+  .highlight {
+	background-color: #464435;
+	border-color: rgb(255, 255, 255) !important;
+  }
+
   #close-img{
     width: 20px;
     height: 20px;
@@ -182,18 +188,21 @@
 
   .saved-notes{
     /*spread items randomly despite of height*/
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
     box-sizing: content-box;
     margin: 200px auto;
+	justify-content: center;
+	/*Allow scrolling when notes overflow*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 100%;
   }
 
   .notes-class {
     display: flex;
     flex-direction: column;
-    border: 1px solid #cecbcb;
+    border: 1px solid #7e7e7e;
     border-radius: 10px;
     margin: 3px;
     padding: 10px;
@@ -204,4 +213,5 @@
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
+	cursor: pointer;
   }

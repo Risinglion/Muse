@@ -21,27 +21,21 @@ app.use(session({
 app.get('*.css', (req, res, next) => {
     res.set('Content-Type', 'text/css');
     next();
-  });
-
-//request session token from the client
-
-
+});
+console.log(port)
 app.get('/', (req, res) => {
-    //call localhost:3000/session to get the session token
-        // Get the session ID from the client cookie
-    const sessionId = req.sessionID
-    document.cookie = 'session=' + sessionId + '; path=/;';
-    console.log(sessionId)
-    // Check if the session ID is valid (e.g. exists in the session store)
-    if (isValidSessionId(sessionId)) {
-        // Retrieve user data from the database using the session ID
-        const userData = getUserData(sessionId)
-        res.sendFile(path.join(__dirname, 'public/index.html'))
-        // Render the index.html template with the user data
-        //******WIP*****
+    //get session-token from cookie
+    const sessionToken = req.cookies['session-token']
+    console.log(sessionToken)
+    //if session-token is not set, redirect to login page
+    if(!sessionToken){
+        res.redirect('/login')
+    }
+    //if session-token is set, redirect to notes page
+    else if(sessionToken == '123456789'){
+        res.sendFile(path.join(__dirname, 'home.html'))
     } else {
-        // Redirect the user to the login page
-        res.redirect('/login');
+        res.redirect('/login')
     }
 });
 
@@ -49,12 +43,21 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/login.html'))
 })
 
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
     const username = req.body.username
     const password = req.body.password
-    //check if username and password is valid
-    //if valid, create a session and redirect to index.html and send status code 200
-    //if not valid, redirect to login.html and send error status code 401
+    console.log(username, password)
+    if(username === "admin" && password === "password"){
+        res.cookie('session-token', '123456789', {
+            maxAge: 1000 * 60 * 60, // 1 hour
+            //secure: true, // Only send the cookie over HTTPS
+            httpOnly: true, // Only allow the browser to access the cookie
+        });
+        res.status(200).json({message: 'OK', redirect: '/'});
+    }
+    else{
+        res.sendStatus(401)
+    }
 })
 
 app.post('/api/savenotes', (req, res) => {

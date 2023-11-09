@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>Muse</title>
+      <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+      <script src="scripts/login.js" defer></script>
+      <script src="scripts/register.js" defer></script>
+</head>
+<body>
+   <!-- welcome to muse message -->
+   
+   <div id="root">
+      <div class="welcome-message">
+         <h1>Welcome to Muse!</h1>
+         <p>Sign in or register to get started.</p>
+      </div>
+      <div class="login-register-container">
+          <div id="login-form">
+              <h2>Login</h2>
+              <input type="text" id="login-username" placeholder="Username">
+              <input type="password" id="login-password" placeholder="Password">
+              <button onclick="postLogin()">Login</button>
+              <p id="show-register">Don't have an account? Register</a>
+              </div>
+          <div id="register-form" style="display: none;">
+              <h2>Register</h2>
+              <input type="text" id="register-username" placeholder="Username">
+              <input type="password" id="register-password" placeholder="Enter Password">
+               <input type="password" id="register-password-confirm" placeholder="Confirm Password">
+              <button onclick="postRegisteration()">Register</button>
+              <a href="#" id="show-login">Already have an account?</a>
+          </div>
+      </div>
+  </div>
+</body>
+<script>
+   document.getElementById('show-register').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('register-form').style.display = 'flex';
+   });
+
+   document.getElementById('show-login').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('register-form').style.display = 'none';
+      document.getElementById('login-form').style.display = 'flex';
+   });
+</script>
+</html>

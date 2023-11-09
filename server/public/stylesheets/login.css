@@ -1,0 +1,79 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; 
+    background-color: #020406;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-register-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px; 
+    background-image: linear-gradient(to bottom, #444b51, #4d6270);
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.login-register-container div {
+    display: flex;
+    flex-direction: column;
+    width: 300px; 
+}
+
+.login-register-container div h2 {
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    font-size: 24px; 
+}
+
+.login-register-container div input {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.login-register-container div button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #cecbcb;
+    cursor: pointer;
+    font-size: 18px; 
+}
+
+#show-register, #show-login {
+    text-decoration: underline;
+    color: #1a1a1a;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.welcome-message {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+     background-color: #4f5151; 
+}
