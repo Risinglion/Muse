@@ -52,6 +52,11 @@ body{
     font-size: 18px; 
 }
 
+#login-username, #register-username, #register-password ,#login-password, #register-password-confirm {
+    background-color: #3b3b3b;
+    color: #cecbcb;
+}
+
 #show-register, #show-login {
     text-decoration: underline;
     color: #1a1a1a;

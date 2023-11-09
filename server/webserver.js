@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
         res.redirect('/login')
     }
     //if session-token is set, redirect to notes page
-    else if(sessionToken == sessionId){
+    else if(sessionToken === sessionId){
         res.sendFile(path.join(__dirname, 'home.html'))
     } else {
         res.redirect('/login')
