@@ -6,6 +6,8 @@ searchInput.addEventListener('keydown', function(event) {
         let searchValue = searchInput.value
         console.log(searchValue)
         searchAndHighlight(searchValue)
+        var closeButton = document.getElementsByClassName('search-bar')[1]
+        closeButton.style.display = 'flex'
     }
     else if(event.key == 'Escape'){
         //clear the search input and bring back all the notes
@@ -16,6 +18,8 @@ searchInput.addEventListener('keydown', function(event) {
             notes[i].style.display = 'block'
             notes[i].classList.remove('highlight')
         }
+        var closeButton = document.getElementsByClassName('search-bar')[1]
+        closeButton.style.display = 'none'
     }
 });
 

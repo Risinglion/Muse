@@ -40,6 +40,19 @@
             color: #cecbcb;
             text-decoration: none;
         }
+
+        .home-icon{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .home-icon:hover{
+            background-color: #404040;
+        }
     </style>
 </head>
 <body>
@@ -59,6 +72,11 @@
     </form>
 
     <h3 style="position: fixed; bottom: 0; left: 5; cursor: pointer; color: red;" onclick="logOut()">Logout</h3>
+    <div class="home-icon">
+        <a href="/">
+            Home
+        </a>
+    </div>
 </body>
     <script>
         function logOut() {
@@ -72,6 +90,7 @@
             })
             .then(response => {
                 if (response.status == 200) {
+                    localStorage.clear(); //clear local storage
                     console.log('Logged out successfully');
                     window.location.href = '/login';
                 }

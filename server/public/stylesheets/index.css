@@ -215,3 +215,18 @@
     width: 100%;
 	cursor: pointer;
   }
+
+  .notes-title {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .notes-content {
+    color: #cbced5
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
